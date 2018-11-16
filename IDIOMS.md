@@ -10,7 +10,7 @@ data class Customer(val name: String, val email: String)
 * copy()
 * component1(), component2(), …, for all properties (see Data classes)
 ## Default values for function parameters
-a: Int = 0 กำหนดค่าดีฟอลต์เป็น 0 ให้กับค่าพารามิเตอร์ a 
+กำหนดค่าดีฟอลต์เป็น 0 ให้กับค่าพารามิเตอร์ a และค่าดีฟอลต์เป็น "" ให้กับค่าพารามิเตอร์ b ถ้าไม่มีการใส่ค่าพารามิเตอร์
 ```kotlin
 fun foo(a: Int = 0, b: String = "") { ... }
 ```
@@ -18,7 +18,7 @@ fun foo(a: Int = 0, b: String = "") { ... }
 ```kotlin
 val positives = list.filter { x -> x > 0 }
 ```
-ยังสั้นได้อีก
+สั้นได้อีก
 ```kotlin
 val positives = list.filter { it > 0 }
 ```
@@ -184,6 +184,7 @@ fun theAnswer(): Int {
 ```
 ตัวอย่างแรกดูจะง่ายและสั้นกว่า
 ## Combined with other idioms
+มิกซ์กระบวนท่ารวมร่าง 
 ```kotlin
 fun transform(color: String): Int = when (color) {
     "Red" -> 0
