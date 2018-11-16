@@ -53,13 +53,13 @@ for (x in 10 downTo 1) { ... }
 if (x in 1..10) { ... }
 ```
 ## Read-only list
-คีย์เวิร์ด val มันทำให้ตัวแปรใช้อ่านอย่างเดียว อยากให้เปลี่ยนค่าได้ไปใช้ var นะ
+คีย์เวิร์ด val มันทำให้ตัวแปรใช้อ่านอย่างเดียว
 ฟังก์ชัน listOf จะได้อินสแตนซ์ของอินเตอร์เฟซ List ออกมา
 ```kotlin
 val list = listOf("a", "b", "c")
 ```
 ## Read-only map
-คีย์เวิร์ด val มันทำให้ตัวแปรใช้อ่านอย่างเดียว อยากให้เปลี่ยนค่าได้ไปใช้ var นะ
+คีย์เวิร์ด val มันทำให้ตัวแปรใช้อ่านอย่างเดียว
 ฟังก์ชัน mapOf จะได้อินสแตนซ์ของอินเตอร์เฟซ Map ออกมา
 ```kotlin
 val map = mapOf("a" to 1, "b" to 2, "c" to 3)
@@ -92,14 +92,14 @@ object Resource {
 }
 ```
 ## If not null shorthand
-ตรวจสอบ null มีมาตรฐานมาให้แล้วนะ
+ตรวจสอบ null มีมาตรฐานมาให้
 ```kotlin
 val files = File("Test").listFiles()
 
 println(files?.size)
 ```
 ## If not null and else shorthand
-ตรวจสอบ null มีมาตรฐานมาให้แล้วนะ
+ตรวจสอบ null มีมาตรฐานมาให้
 ```kotlin
 val files = File("Test").listFiles()
 println(files?.size ?: "empty")
@@ -152,7 +152,7 @@ fun test() {
 }
 ```
 ## if expression
-สามารถสร้างตัวแปรมารับค่า รีเทิร์นจากบล็อค if
+สร้างตัวแปรมารับค่า รีเทิร์นจากบล็อค if
 ```kotlin
 fun foo(param: Int) {
     val result = if (param == 1) {
@@ -221,7 +221,7 @@ stream.buffered().reader().use { reader ->
 }
 ```
 ## Consuming a nullable Boolean
-ืnull == true -> false
+null == true -> false
 null == false -> true
 ```kotlin
 val b: Boolean? = ...
