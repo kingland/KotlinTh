@@ -155,7 +155,7 @@ fun getStringLength(obj: Any): Int? {
 }
 ```
 ## Loop
-คีย์เวิร์ด in ใช้ในวนลูปค่า Array, Collection ต่างคล้ายกับ JS
+คีย์เวิร์ด in ใช้ในวนลูปค่า Array, Collection คล้ายกับ JavaScript
 ```kotlin
 val items = listOf("apple", "banana", "kiwifruit")
 for (item in items) {
