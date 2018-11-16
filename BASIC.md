@@ -59,7 +59,7 @@ fun incrementX() {
 /* This is a block comment
    on multiple lines. */
 ```
-##String Template
+## String Template
 ```kotlin
 var a = 1
 // simple name in template:
