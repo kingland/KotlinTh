@@ -228,19 +228,20 @@ for (x in 9 downTo 0 step 3) {
 }
 ```
 ## Collections
+คีย์เวิร์ด in วนลูปข้อมูลในคอลเลคชัน
 ```kotlin
 for (item in items) {
     println(item)
 }
 ```
-
+คีย์เวิร์ด when, in ตรวจสอบข้อมูลในคอลเลคชัน
 ```kotlin
 when {
     "orange" in items -> println("juicy")
     "apple" in items -> println("apple is fine too")
 }
 ```
-
+การใช้งาน lambda ในคอลเลคชัน
 ```kotlin
 val fruits = listOf("banana", "avocado", "apple", "kiwifruit")
 fruits
@@ -250,6 +251,7 @@ fruits
   .forEach { println(it) }
 ```
 ## Creating instance
+การสร้างออปเจคและอินสแตนซ์
 ```kotlin
 val rectangle = Rectangle(5.0, 2.0) //no 'new' keyword required
 val triangle = Triangle(3.0, 4.0, 5.0)
