@@ -85,6 +85,7 @@ toChar()    | Char
 val l = 1L + 3 // Long + Int => Long
 ```
 ## Operations
+โอเปอเรชันทางคณิตศาสตร์ บวกลบคูณหาร มีให้ใช้ปกติ แต่ที่เพิ่มมาสามารถประกาศฟังก์ชันให้เป็นโอเปอร์เรชันได้ เรียกใช้ในรูปแบบ infix
 ```kotlin
 val x = (1 shl 2) and 0x000FF000
 ```
@@ -98,3 +99,32 @@ and(bits)    | bitwise and
 or(bits)     | bitwise or
 xor(bits)    | bitwise xor
 inv()        | bitwise inversion
+## Floating Point Comparison
+* Equality - a == b และ a != b
+* Comparison - a < b, a > b, a <= b, a >= b
+* Range - a..b, x in a..b, x !in a..b
+## Any, Comparable<...> 
+ข้อมูลประเภทอื่นที่ไม่ใช่ Static Floating Point ใช้ equals และ compareTo
+* NaN จะ equal ตัวเอง
+* NaN is considered greater than any other element including POSITIVE_INFINITY
+* -0.0 is considered less than 0.0
+## Characters
+ข้อมูลชนิด Char ไม่สามารถแทนด้วยข้อมูลชนิดตัวเลข Int, Byte มันคือข้อมูลคนละประเภท
+```kotlin
+fun check(c: Char) {
+    if (c == 1) { // ERROR: incompatible types
+        // ...
+    }
+}
+```
+* character literals - `'1'`
+* escape - `\t, \b, \n, \r, \', \", \\  \$`
+* unicode escape - `'\uFF00'`
+แปลงค่า Char เป็น Int โดยใช้  explicitly convert
+```kotlin
+fun decimalDigitValue(c: Char): Int {
+    if (c !in '0'..'9')
+        throw IllegalArgumentException("Out of range")
+    return c.toInt() - '0'.toInt() // Explicit conversions to numbers
+}
+```
