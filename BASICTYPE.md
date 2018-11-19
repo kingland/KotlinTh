@@ -196,7 +196,7 @@ val a2 = 0xFFFF_FFFF_FFFFu // ULong: no expected type provided, constant doesn't
 ```
 ## Experimental status of unsigned integers
 ชนิดข้อมูล unsigned อยู่ในช่วงทดสอบ อาจจะไม่ครอบคุมบางฟีเจอร์เมื่อใช้ unsigned ใน Kotlin 1.3+ จะพบกับรายงานข้อผิดพลาด ซึ่งสามารถยกเลิกรายงานข้อผิดพลาดดังกล่าวโดย
-* propagate experimentality เพิ่ม @ExperimentalUnsignedTypes  หรือเพิ่มออปชัน -Xexperimental=kotlin.ExperimentalUnsignedTypes
+* propagate experimentality เพิ่ม @ExperimentalUnsignedTypes  หรือ <br/>เพิ่มออปชัน -Xexperimental=kotlin.ExperimentalUnsignedTypes
 ```kotlin
 // a function that exposes unsigned types in signature
 @ExperimentalUnsignedTypes
@@ -209,7 +209,7 @@ fun usesUnsignedUnderTheCover(): Boolean {
     return upTo(10u) < 5u
 }
 ```
-* without propagating experimentality, เพิ่ม @UseExperimental(ExperimentalUnsignedTypes::class) หรือเพิ่มออปชัน -Xuse-experimental=kotlin.ExperimentalUnsignedTypes
+* without propagating experimentality, เพิ่ม @UseExperimental(ExperimentalUnsignedTypes::class) หรือ <br/>เพิ่มออปชัน -Xuse-experimental=kotlin.ExperimentalUnsignedTypes
 ## Strings
 สตริงคือข้อมูลที่เป็น immutable คือไม่สามารถเปลี่ยนแปลงได้ ต้องสร้างใหม่อย่างเดียว
 ```kotlin
