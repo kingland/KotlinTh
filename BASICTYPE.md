@@ -68,6 +68,7 @@ val i: Int = b.toInt() // OK: explicitly widened
 print(i)
 ```
 ข้อมูลตัวเลขมีฟังก์ชันช่วยในการแปลงค่าข้อมูล
+## Explicit Conversions Function
 Function    | Type
 ----------- | --------
 toByte()    | Byte
@@ -87,7 +88,7 @@ val l = 1L + 3 // Long + Int => Long
 ```kotlin
 val x = (1 shl 2) and 0x000FF000
 ```
-เฉพาะ Int และ Long
+## Int and Long Operations
 Operator     | Description
 ---------    | --------
 shl(bits)    | signed shift left (Java's <<)
