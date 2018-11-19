@@ -104,9 +104,9 @@ inv()        | bitwise inversion
 * Comparison - a < b, a > b, a <= b, a >= b
 * Range - a..b, x in a..b, x !in a..b
 ## Any, Comparable<...> 
-ข้อมูลประเภทอื่นที่ไม่ใช่ Static Floating Point ใช้ equals และ compareTo
-* NaN จะ equal ตัวเอง
-* NaN is considered greater than any other element including POSITIVE_INFINITY
+ข้อมูลประเภทอื่นที่ไม่ใช่ Static Floating Point ใช้ `equals` และ `compareTo`
+* NaN จะ `equal` ตัวเอง
+* NaN is considered greater than any other element including `POSITIVE_INFINITY`
 * -0.0 is considered less than 0.0
 ## Characters
 ข้อมูลชนิด Char ไม่สามารถแทนด้วยข้อมูลชนิดตัวเลข Int, Byte มันคือข้อมูลคนละประเภท
