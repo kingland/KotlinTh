@@ -79,7 +79,7 @@ toFloat()   | Float
 toDouble()  | Double
 toChar()    | Char
 ### Implicit conversions อัตโนมัติเมื่อ
-* ต้องการประเมินชนิดตัวแปรจากบริบท กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
+* ต้องการประเมินชนิดตัวแปร กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
 * ดำเนินการทางคณิตศาสตร์ (arithmetical operations) Long + Int จะได้ค่าข้อมูลใหญ่กว่า Long เป็นค่ารีเทิร์น
 ```kotlin
 val l = 1L + 3 // Long + Int => Long
@@ -211,7 +211,7 @@ fun usesUnsignedUnderTheCover(): Boolean {
 ```
 * without propagating experimentality, เพิ่ม @UseExperimental(ExperimentalUnsignedTypes::class) หรือเพิ่มออปชัน -Xuse-experimental=kotlin.ExperimentalUnsignedTypes
 ## Strings
-Strings are immutable คือไม่สามารถเปลี่ยนแปลง ต้องสร้างใหม่อย่างเดียวไปต่อเติมเพิ่มจากของเดิมไม่ได้
+สตริงคือข้อมูลที่เป็น immutable คือไม่สามารถเปลี่ยนแปลงได้ ต้องสร้างใหม่อย่างเดียว
 ```kotlin
 for (c in str) {
     println(c)
