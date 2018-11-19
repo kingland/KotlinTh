@@ -120,8 +120,9 @@ fun check(c: Char) {
 * character literals - `'1'`
 * escape - `\t, \b, \n, \r, \', \", \\  \$`
 * unicode escape - `'\uFF00'`
-แปลงค่า Char เป็น Int โดยใช้  explicitly convert
+
 ```kotlin
+//แปลงค่า Char เป็น Int โดยใช้  explicitly convert
 fun decimalDigitValue(c: Char): Int {
     if (c !in '0'..'9')
         throw IllegalArgumentException("Out of range")
