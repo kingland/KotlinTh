@@ -2,7 +2,7 @@
 ข้อมูลชนิดตัวเลข มีพื้นฐานคล้ายกับจาวา แต่จะมีความแตกต่างในบ้างอย่างเช่น 
 * implicit widening conversions
 * literals are slightly different in some cases
-## BitWidth
+### BitWidth
 Type  | BitWidth
 ------ | --------
 Double | 64
@@ -88,7 +88,7 @@ val l = 1L + 3 // Long + Int => Long
 ```kotlin
 val x = (1 shl 2) and 0x000FF000
 ```
-## Int and Long Operations
+### Int and Long Operations
 Operator     | Description
 ---------    | --------
 shl(bits)    | signed shift left (Java's <<)
