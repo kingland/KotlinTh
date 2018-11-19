@@ -132,11 +132,9 @@ fun decimalDigitValue(c: Char): Int {
 ## Booleans
 มี 2 ค่าคือ true และ false และสามารถมีค่าเป็น null 
 ### Boolean Operations
-Operation  | Description
----------  | --------
-`||`    | lazy disjunction
-`&&`    | lazy conjunction
-`!`     | negation
+* `||`    - lazy disjunction
+* `&&`    - lazy conjunction
+* `!`     - negation
 ## Arrays
 คลาส Array จะมีฟังก์ชัน `get` , `set` ([] คือ operator overloading ของ set) และ `size` 
 ```kotlin
@@ -172,10 +170,92 @@ val x: IntArray = intArrayOf(1, 2, 3)
 x[0] = x[1] + x[2]
 ```
 ทุกคลาสจะสืบทอดมาจากคลาส Array
-## Unsigned integers
+## Unsigned integers classes
 Class     | Description
 ---------    | --------
 kotlin.UByte | 0 to 255
 kotlin.UShort | 0 to 65535
 kotlin.UInt |  0 to 2^32 - 1
 kotlin.ULong |  0 to 2^64 - 1
+## Specialized classes
+Class     | Description
+---------    | --------
+kotlin.UByteArray | array of unsigned bytes
+kotlin.UShortArray | array of unsigned shorts
+kotlin.UIntArray |  array of unsigned ints
+kotlin.ULongArray |  array of unsigned longs
+## Literals
+กำหนด unsigned ด้วยการใช้ u, U หน้าชนิดข้อมูล
+```kotlin
+val b: UByte = 1u  // UByte, expected type provided
+val s: UShort = 1u // UShort, expected type provided
+val l: ULong = 1u  // ULong, expected type provided
+
+val a1 = 42u // UInt: no expected type provided, constant fits in UInt
+val a2 = 0xFFFF_FFFF_FFFFu // ULong: no expected type provided, constant doesn't fit in UInt
+```
+## Experimental status of unsigned integers
+ชนิดข้อมูล unsigned อยู่ในช่วงทดสอบ อาจจะไม่ครอบคุมบางฟีเจอร์เมื่อใช้ unsigned ใน Kotlin 1.3+ จะพบกับรายงานข้อผิดพลาด ซึ่งสามารถยกเลิกรายงานข้อผิดพลาดดังกล่าวโดย
+* propagate experimentality เพิ่ม @ExperimentalUnsignedTypes  หรือเพิ่มออปชัน -Xexperimental=kotlin.ExperimentalUnsignedTypes
+```kotlin
+// a function that exposes unsigned types in signature
+@ExperimentalUnsignedTypes
+fun upTo(limit: UInt): UInt {
+}
+
+// a function that uses unsigned types in its body
+@ExperimentalUnsignedTypes
+fun usesUnsignedUnderTheCover(): Boolean {
+    return upTo(10u) < 5u
+}
+```
+* without propagating experimentality, เพิ่ม @UseExperimental(ExperimentalUnsignedTypes::class) หรือเพิ่มออปชัน -Xuse-experimental=kotlin.ExperimentalUnsignedTypes
+## Strings
+Strings are immutable คือไม่สามารถเปลี่ยนแปลง ต้องสร้างใหม่อย่างเดียวไปต่อเติมเพิ่มจากของเดิมไม่ได้
+```kotlin
+for (c in str) {
+    println(c)
+}
+```
+โอเปอเรเตอร์ + หมายถึงการต่อสตริง 
+```kotlin
+val s = "abc" + 1
+println(s + "def")
+```
+## String Literals
+ประกอบด้วย
+* escaped characters
+* raw string
+```kotlin
+val s = "Hello, world!\n"
+```
+```kotlin
+val text = """
+    for (c in "foo")
+        print(c)
+"""
+```
+ลบ whitespace ด้วยฟังก์ชั่น trimMargin
+```kotlin
+val text = """
+    |Tell me and I forget.
+    |Teach me and I remember.
+    |Involve me and I learn.
+    |(Benjamin Franklin)
+    """.trimMargin()
+```
+
+## String Templates
+```kotlin
+val i = 10
+println("i = $i") // prints "i = 10"
+```
+```kotlin
+val s = "abc"
+println("$s.length is ${s.length}") // prints "abc.length is 3"
+```
+```kotlin
+val price = """
+${'$'}9.99
+"""
+```
