@@ -2,8 +2,8 @@
 ข้อมูลชนิดตัวเลข มีพื้นฐานคล้ายกับจาวา แต่จะมีความแตกต่างในบ้างอย่างเช่น 
 * implicit widening conversions
 * literals are slightly different in some cases
-## Numbers Type
-Type  | Bit Width
+## BitWidth
+Type  | BitWidth
 ------ | --------
 Double | 64
 Float  | 32
@@ -68,7 +68,7 @@ val i: Int = b.toInt() // OK: explicitly widened
 print(i)
 ```
 ข้อมูลตัวเลขมีฟังก์ชันช่วยในการแปลงค่าข้อมูล
-## Explicit Conversions Function
+## Conversion Functions
 Function    | Type
 ----------- | --------
 toByte()    | Byte
@@ -78,7 +78,7 @@ toLong()    | Long
 toFloat()   | Float
 toDouble()  | Double
 toChar()    | Char
-ข้อยกเว้น implicit conversions อัตโนมัติ
+# ข้อยกเว้น implicit conversions อัตโนมัติ
 * การประเมินชนิดตัวแปรจากบริบทต่าง กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
 * ดำเนินการทางคณิตศาสตร์ (arithmetical operations)
 ```kotlin
