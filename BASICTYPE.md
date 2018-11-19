@@ -129,3 +129,47 @@ fun decimalDigitValue(c: Char): Int {
     return c.toInt() - '0'.toInt() // Explicit conversions to numbers
 }
 ```
+## Booleans
+มี 2 ค่าคือ true และ false และสามารถมีค่าเป็น null 
+* || – lazy disjunction
+* && – lazy conjunction
+* ! - negation
+## Arrays
+คลาส Array จะมีฟังก์ชัน `get` , `set` ([] คือ operator overloading ของ set) และ `size` 
+```kotlin
+class Array<T> private constructor() {
+    val size: Int
+    operator fun get(index: Int): T
+    operator fun set(index: Int, value: T): Unit
+
+    operator fun iterator(): Iterator<T>
+    // ...
+}
+```
+### Function Create Array
+* arrayOf() - arrayOf(1, 2, 3)
+* [1, 2, 3]
+* arrayOfNulls()
+```kotlin
+// Creates an Array<String> with values ["0", "1", "4", "9", "16"]
+val asc = Array(5, { i -> (i * i).toString() })
+asc.forEach { println(it) }
+```
+### Arrays Of Primitive
+Class     | Description
+---------    | --------
+ByteArray    | 
+ShortArray    | 
+IntArray    |  
+* ทุกคลาสจะสืบทอดมาจากคลาส Array 
+```kotlin
+val x: IntArray = intArrayOf(1, 2, 3)
+x[0] = x[1] + x[2]
+```
+## Unsigned integers
+Class     | Description
+---------    | --------
+kotlin.UByte    | 0 to 255
+kotlin.UShort    | 0 to 65535
+kotlin.UInt    |  0 to 2^32 - 1
+kotlin.ULong    |  0 to 2^64 - 1
