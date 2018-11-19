@@ -163,14 +163,15 @@ asc.forEach { println(it) }
 ### Arrays Of Primitive
 Class     | Description
 ---------    | --------
-ByteArray    | 
-ShortArray   | 
-IntArray     |  
-`ทุกคลาสจะสืบทอดมาจากคลาส Array` 
+ByteArray    | Array of Byte
+ShortArray   | Array of Short
+IntArray     | Array of Int
+ 
 ```kotlin
 val x: IntArray = intArrayOf(1, 2, 3)
 x[0] = x[1] + x[2]
 ```
+ทุกคลาสจะสืบทอดมาจากคลาส Array
 ## Unsigned integers
 Class     | Description
 ---------    | --------
