@@ -2,15 +2,14 @@
 ข้อมูลชนิดตัวเลข มีพื้นฐานคล้ายกับจาวา แต่จะมีความแตกต่างในบ้างอย่างเช่น 
 * implicit widening conversions
 * literals are slightly different in some cases
-Type  | Example
------- | --------
-Decimals | 123
-Longs  | 123L
-Hexadecimals | 0x0F
-Binaries | 0b00001011
-Octal  | Not support
-Doubles  | 123.5, 123.5e10
-Floats  | 123.5f
+| Type  | Bit Width |
+| ------------- | ------------- |
+| Double  | 64  |
+| Float  | 32  |
+| Long  | 64  |
+| Int  | 32  |
+| Short  | 16  |
+| Byte  | 8  |
 ## Literal Constants
 Type  | Example
 ------ | --------
