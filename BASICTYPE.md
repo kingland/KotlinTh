@@ -78,9 +78,9 @@ toLong()    | Long
 toFloat()   | Float
 toDouble()  | Double
 toChar()    | Char
-### ข้อยกเว้น implicit conversions อัตโนมัติ
-* การประเมินชนิดตัวแปรจากบริบทต่าง กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
-* ดำเนินการทางคณิตศาสตร์ (arithmetical operations)
+### Implicit conversions อัตโนมัติเมื่อ
+* ต้องการประเมินชนิดตัวแปรจากบริบท กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
+* ดำเนินการทางคณิตศาสตร์ (arithmetical operations) Long + Int จะได้ค่าข้อมูลใหญ่กว่า Long เป็นค่ารีเทิร์น
 ```kotlin
 val l = 1L + 3 // Long + Int => Long
 ```
