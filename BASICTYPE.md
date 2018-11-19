@@ -5,11 +5,11 @@
 Type  | Bit Width
 ------ | --------
 Double | 64
-Float  | 32 
-Long   | 64 
-Int    | 32 
-Short  | 16 
-Byte   | 8 
+Float | 32 
+Long | 64 
+Int | 32 
+Short | 16 
+Byte | 8 
 ## Literal Constants
 Type  | Example
 ------ | --------
@@ -55,8 +55,8 @@ val b: Long? = a // implicit conversion yields a boxed Long (java.lang.Long)
 print(b == a) // Surprise! This prints "false" as Long's equals() checks whether the other is Long as well
 ```
 ข้อมูลไม่สามารถทำ implicitly converted ไปยังชนิดข้อมูลที่ใหญ่กว่า
-*implicitly converted คือกลไกที่คอมไพเลอร์ช่วยแปลงข้อมูล 
-*explicit conversions คือคอมไพเลอร์ไม่มีการช่วยแปลงข้อมูลอยากได้ต้องทำเอง
+* implicitly converted คือกลไกที่คอมไพเลอร์ช่วยแปลงข้อมูล 
+* explicit conversions คือคอมไพเลอร์ไม่มีการช่วยแปลงข้อมูลอยากได้ต้องทำเอง
 ```kotlin
 val b: Byte = 1 // OK, literals are checked statically
 val i: Int = b // ERROR
@@ -77,8 +77,8 @@ toFloat()   | Float
 toDouble()  | Double
 toChar()    | Char
 ข้อยกเว้น implicit conversions อัตโนมัติ
-*การประเมินชนิดตัวแปรจากบริบทต่าง กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
-*ดำเนินการทางคณิตศาสตร์ (arithmetical operations)
+* การประเมินชนิดตัวแปรจากบริบทต่าง กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
+* ดำเนินการทางคณิตศาสตร์ (arithmetical operations)
 ```kotlin
 val l = 1L + 3 // Long + Int => Long
 ```
