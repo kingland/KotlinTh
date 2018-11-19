@@ -22,7 +22,7 @@ Octal  | Not support
 Doubles  | 123.5, 123.5e10
 Floats  | 123.5f
 ## Underscores in numeric literals (since 1.1)
-อ่านโค๊ดให้ง่ายขึ้นด้วย _
+อ่านโค๊ดให้ง่ายขึ้นด้วย underscore (_) 
 ```kotlin
 val oneMillion = 1_000_000
 val creditCardNumber = 1234_5678_9012_3456L
@@ -78,7 +78,7 @@ toLong()    | Long
 toFloat()   | Float
 toDouble()  | Double
 toChar()    | Char
-# ข้อยกเว้น implicit conversions อัตโนมัติ
+### ข้อยกเว้น implicit conversions อัตโนมัติ
 * การประเมินชนิดตัวแปรจากบริบทต่าง กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
 * ดำเนินการทางคณิตศาสตร์ (arithmetical operations)
 ```kotlin
