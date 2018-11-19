@@ -134,9 +134,9 @@ fun decimalDigitValue(c: Char): Int {
 ### Boolean Operations
 Operation  | Description
 ---------  | --------
-||    | lazy disjunction
-&&    | lazy conjunction
-!     | negation
+`||`    | lazy disjunction
+`&&`    | lazy conjunction
+`!`     | negation
 ## Arrays
 คลาส Array จะมีฟังก์ชัน `get` , `set` ([] คือ operator overloading ของ set) และ `size` 
 ```kotlin
