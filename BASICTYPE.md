@@ -22,7 +22,7 @@ Octal  | Not support
 Doubles  | 123.5, 123.5e10
 Floats  | 123.5f
 ## Underscores in numeric literals (since 1.1)
-อ่านโค๊ดให้ง่ายขึ้นด้วย underscore (_) 
+อ่านโค๊ดให้ง่ายขึ้นด้วย **underscore** 
 ```kotlin
 val oneMillion = 1_000_000
 val creditCardNumber = 1234_5678_9012_3456L
@@ -31,7 +31,7 @@ val hexBytes = 0xFF_EC_DE_5E
 val bytes = 0b11010010_01101001_10010100_10010010
 ```
 ## Representation
-Int? สามารถเป็นได้ ข้อมูลตัวเลข และ null ดังนั้น
+ระบุประเภทตามด้วย **`?`** เช่น **`Int?`** ทำให้รู้ตัวแปรดังกล่าวอาจเป็นค่า null ได้
 ```kotlin
 val a: Int = 10000
 println(a === a) // Prints 'true'
@@ -78,7 +78,7 @@ toLong()    | Long
 toFloat()   | Float
 toDouble()  | Double
 toChar()    | Char
-### Implicit conversions อัตโนมัติเมื่อ
+### ทำ Implicit conversions เมื่อ
 * ต้องการประเมินชนิดตัวแปร กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
 * ดำเนินการทางคณิตศาสตร์ (arithmetical operations) Long + Int จะได้ค่าข้อมูลใหญ่กว่า Long เป็นค่ารีเทิร์น
 ```kotlin
@@ -109,7 +109,7 @@ inv()        | bitwise inversion
 * NaN is considered greater than any other element including `POSITIVE_INFINITY`
 * -0.0 is considered less than 0.0
 ## Characters
-ข้อมูลชนิด Char ไม่สามารถแทนด้วยข้อมูลชนิดตัวเลข Int, Byte มันคือข้อมูลคนละประเภท
+ข้อมูลชนิด **`Char`** ไม่สามารถแทนด้วยข้อมูลชนิดตัวเลข **`Int`**, **`Byte`** มันคือข้อมูลคนละประเภท
 ```kotlin
 fun check(c: Char) {
     if (c == 1) { // ERROR: incompatible types
@@ -130,13 +130,13 @@ fun decimalDigitValue(c: Char): Int {
 }
 ```
 ## Booleans
-มี 2 ค่าคือ true และ false และสามารถมีค่าเป็น null 
+มี 2 ค่าคือ **`true`** และ **`false`** และสามารถมีค่าเป็น **`null`** 
 ### Boolean Operations
 * `||`    - lazy disjunction
 * `&&`    - lazy conjunction
 * `!`     - negation
 ## Arrays
-คลาส Array จะมีฟังก์ชัน `get` , `set` ([] คือ operator overloading ของ set) และ `size` 
+คลาส **`Array`** จะมีฟังก์ชัน **`get`** , **`set`** ([] คือ operator overloading ของ set) และ **`size`** 
 ```kotlin
 class Array<T> private constructor() {
     val size: Int
@@ -169,7 +169,7 @@ IntArray     | Array of Int
 val x: IntArray = intArrayOf(1, 2, 3)
 x[0] = x[1] + x[2]
 ```
-ทุกคลาสจะสืบทอดมาจากคลาส Array
+ทุกคลาสจะสืบทอดมาจากคลาส **Array**
 ## Unsigned integers classes
 Class     | Description
 ---------    | --------
@@ -185,7 +185,7 @@ kotlin.UShortArray | array of unsigned shorts
 kotlin.UIntArray |  array of unsigned ints
 kotlin.ULongArray |  array of unsigned longs
 ## Literals
-กำหนด unsigned ด้วยการใช้ u, U หน้าชนิดข้อมูล
+กำหนด **`unsigned`** ด้วยการใช้ u, U หน้าชนิดข้อมูล
 ```kotlin
 val b: UByte = 1u  // UByte, expected type provided
 val s: UShort = 1u // UShort, expected type provided
@@ -195,8 +195,8 @@ val a1 = 42u // UInt: no expected type provided, constant fits in UInt
 val a2 = 0xFFFF_FFFF_FFFFu // ULong: no expected type provided, constant doesn't fit in UInt
 ```
 ## Experimental status of unsigned integers
-ชนิดข้อมูล unsigned อยู่ในช่วงทดสอบ อาจจะไม่ครอบคุมบางฟีเจอร์เมื่อใช้ unsigned ใน Kotlin 1.3+ จะพบกับรายงานข้อผิดพลาด ซึ่งสามารถยกเลิกรายงานข้อผิดพลาดดังกล่าวโดย
-* propagate experimentality <br/>เพิ่ม @ExperimentalUnsignedTypes  หรือเพิ่มออปชัน -Xexperimental=kotlin.ExperimentalUnsignedTypes
+ชนิดข้อมูล **`unsigned`** อยู่ในช่วงทดสอบ อาจจะไม่ครอบคุมบางฟีเจอร์เมื่อใช้ unsigned ใน Kotlin 1.3+ จะพบกับรายงานข้อผิดพลาด ซึ่งสามารถยกเลิกรายงานข้อผิดพลาดดังกล่าวโดย
+* propagate experimentality <br/>เพิ่ม **@ExperimentalUnsignedTypes**  หรือเพิ่มออปชัน **-Xexperimental=kotlin.ExperimentalUnsignedTypes**
 ```kotlin
 // a function that exposes unsigned types in signature
 @ExperimentalUnsignedTypes
@@ -209,15 +209,15 @@ fun usesUnsignedUnderTheCover(): Boolean {
     return upTo(10u) < 5u
 }
 ```
-* without propagating experimentality <br/>เพิ่ม @UseExperimental(ExperimentalUnsignedTypes::class) หรือเพิ่มออปชัน -Xuse-experimental=kotlin.ExperimentalUnsignedTypes
+* without propagating experimentality <br/>เพิ่ม **@UseExperimental(ExperimentalUnsignedTypes::class)** หรือเพิ่มออปชัน **-Xuse-experimental=kotlin.ExperimentalUnsignedTypes**
 ## Strings
-สตริงคือข้อมูลที่เป็น immutable คือไม่สามารถเปลี่ยนแปลงได้ ต้องสร้างใหม่อย่างเดียว
+สตริงคือข้อมูลที่เป็น **`immutable`** คือไม่สามารถเปลี่ยนแปลงได้ ต้องสร้างใหม่อย่างเดียว
 ```kotlin
 for (c in str) {
     println(c)
 }
 ```
-โอเปอเรเตอร์ + หมายถึงการต่อสตริง 
+โอเปอเรเตอร์ **`+`** หมายถึงการต่อสตริง 
 ```kotlin
 val s = "abc" + 1
 println(s + "def")
@@ -235,7 +235,7 @@ val text = """
         print(c)
 """
 ```
-ลบ whitespace ด้วยฟังก์ชั่น trimMargin
+ลบ **whitespace** ด้วยฟังก์ชั่น **`trimMargin`**
 ```kotlin
 val text = """
     |Tell me and I forget.
