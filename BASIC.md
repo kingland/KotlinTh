@@ -13,17 +13,17 @@ fun sum(a: Int, b: Int): Int {
 }
 ```
 ค่ารีเทิร์น (Return Type) อาจจะไม่มีการประกาศตั้งแต่ตอนต้น แต่คอมไพเลอร์จะกำหนดค่าให้ตอนคอมไพล์อยู่ดี ประเมินจากชนิดข้อมูลในฟังก์ชั่นที่เป็น 
-เอ็กเพรสชัน (Expression) สุดท้าย เช่น a + b เป็น Int ดังนั้นเมื่อ a, b ผ่านตัวดำเนินการ (Operator)ใดๆ ควรได้ค่า Int ค่ารีเทิร์น (Return Type) จึงเป็นค่า Int
+เอ็กเพรสชัน (Expression) สุดท้าย เช่น a, b เป็นค่า Int ดังนั้นเมื่อ a, b ผ่านตัวดำเนินการ (Operator)ใดๆ ควรได้ค่า Int ค่ารีเทิร์น (Return Type) จึงเป็นค่า Int
 ```kotlin
 fun sum(a: Int, b: Int) = a + b
 ```
-Unit == Void คือกำหนดฟังก์ชันไม่มี ค่ารีเทิร์น (Return Type)
+**`Unit = Void`** คือกำหนดฟังก์ชันไม่มี ค่ารีเทิร์น (Return Type)
 ```kotlin
 fun printSum(a: Int, b: Int): Unit {
     println("sum of $a and $b is ${a + b}")
 }
 ```
-Unit อาจจะไม่มีการประกาศตั้งแต่ตอนต้น แต่คอมไพเลอร์จะกำหนดค่าให้ตอนคอมไพล์อยู่ดี ประเมินจากชนิดข้อมูลในฟังก์ชั่นที่เป็น 
+**`Unit`** อาจจะไม่มีการประกาศตั้งแต่ตอนต้น แต่คอมไพเลอร์จะกำหนดค่าให้ตอนคอมไพล์อยู่ดี ประเมินจากชนิดข้อมูลในฟังก์ชั่นที่เป็น 
 เอ็กเพรสชัน (Expression) สุดท้าย
 ```kotlin
 fun printSum(a: Int, b: Int) {
@@ -31,14 +31,14 @@ fun printSum(a: Int, b: Int) {
 }
 ```
 ## Variables
-val ตัวแปรที่อ่านอย่างเดียว (Read Only)
+**`val`** ตัวแปรที่อ่านอย่างเดียว (Read Only)
 ```kotlin
 val a: Int = 1  // immediate assignment
 val b = 2   // `Int` type is inferred
 val c: Int  // Type required when no initializer is provided
 c = 3       // deferred assignment
 ```
-var ตัวแปรที่สามารถเปลี่ยนแปลงสถานะ (Mutable)
+**`var`** ตัวแปรที่สามารถเปลี่ยนแปลงสถานะ (Mutable)
 ```kotlin
 var x = 5 // `Int` type is inferred
 x += 1
@@ -84,13 +84,13 @@ fun maxOf(a: Int, b: Int): Int {
 fun maxOf(a: Int, b: Int) = if (a > b) a else b
 ```
 ## Checking for null
-กำหนด ค่ารีเทิร์น เป็น Int? เพื่อระบุว่า ค่ารีเทิร์น อามีค่าเป็น Int หรือ null
+ระบุค่ารีเทิร์น (Return type) ด้วย **`?`** เช่น **`Int?`** เพื่อระบุว่า ค่ารีเทิร์น อามีค่าเป็น Int หรือ null
 ```kotlin
 fun parseInt(str: String): Int? {
     // ...
 }
 ```
-ตรวจสอบค่า null โดยใช้ if ในการตรวจสอบ
+ตรวจสอบค่า **`null`** โดยใช้ **`if`** ในการตรวจสอบ
 ```kotlin
 fun printProduct(arg1: String, arg2: String) {
     val x = parseInt(arg1)
@@ -122,7 +122,7 @@ if (y == null) {
 println(x * y)
 ```
 ## Type checks and Automatic casts
-คีย์เวิร์ด is ในการตรวจสอบชนิดข้อมูล ถ้าเป็นชนิดข้อมูลนั้นจริง จะทำการ cast ข้อมูลให้อัตโนมัติ
+คีย์เวิร์ด **`is`** ในการตรวจสอบชนิดข้อมูล ถ้าเป็นชนิดข้อมูลนั้นจริง จะทำการ **cast** ข้อมูลให้อัตโนมัติ
 ```kotlin
 fun getStringLength(obj: Any): Int? {
     if (obj is String) {
@@ -155,7 +155,7 @@ fun getStringLength(obj: Any): Int? {
 }
 ```
 ## Loop
-คีย์เวิร์ด in ใช้ในวนลูปค่า Array, Collection คล้ายกับ JavaScript
+คีย์เวิร์ด **`in`** ใช้ในวนลูปค่า **Array**, **Collection** คล้ายกับ JavaScript
 ```kotlin
 val items = listOf("apple", "banana", "kiwifruit")
 for (item in items) {
@@ -170,7 +170,7 @@ for (index in items.indices) {
 }
 ```
 ## While Loop
-คีย์เวิร์ด while ใช้ในวนลูปค่า Array, Collection โดยกำหนดเงือนไขสิ้นสุดการทำงานลงใน while
+คีย์เวิร์ด **`while`** ใช้ในวนลูปค่า **Array**, **Collection** โดยกำหนดเงือนไขสิ้นสุดการทำงานลงใน while
 ```kotlin
 val items = listOf("apple", "banana", "kiwifruit")
 var index = 0
@@ -180,7 +180,7 @@ while (index < items.size) {
 }
 ```
 ## When Expression
-คีย์เวิร์ด when ลักษณะใช้งานคล้ายกับ if..ifelse หรือ switch แต่มีความยืดหยุ่นมากกว่า 
+คีย์เวิร์ด **`when`** ลักษณะใช้งานคล้ายกับ **if..ifelse** หรือ **switch** แต่มีความยืดหยุ่นมากกว่า 
 ```kotlin
 fun describe(obj: Any): String =
     when (obj) {
@@ -193,7 +193,7 @@ fun describe(obj: Any): String =
 ```
 
 ## Ranges
-ตรวจสอบค่าในแรงค์โดยใช้ if
+ตรวจสอบค่าในแรงค์โดยใช้ **`if`**
 ```kotlin
 val x = 10
 val y = 9
@@ -211,7 +211,7 @@ if (list.size !in list.indices) {
     println("list size is out of valid list indices range, too")
 }
 ```
-สามารถใช้ for ในการวนลูปค่าในแรงค์
+สามารถใช้ **`for`** ในการวนลูปค่าในแรงค์
 ```kotlin
 for (x in 1..5) {
     print(x)
@@ -228,20 +228,20 @@ for (x in 9 downTo 0 step 3) {
 }
 ```
 ## Collections
-คีย์เวิร์ด in วนลูปข้อมูลในคอลเลคชัน
+คีย์เวิร์ด **`in`** วนลูปข้อมูลในคอลเลคชัน
 ```kotlin
 for (item in items) {
     println(item)
 }
 ```
-คีย์เวิร์ด when, in ตรวจสอบข้อมูลในคอลเลคชัน
+คีย์เวิร์ด **`when`**, **`in`** ตรวจสอบข้อมูลในคอลเลคชัน
 ```kotlin
 when {
     "orange" in items -> println("juicy")
     "apple" in items -> println("apple is fine too")
 }
 ```
-การใช้งาน lambda ในคอลเลคชัน
+การใช้งาน **lambda** ในคอลเลคชัน
 ```kotlin
 val fruits = listOf("banana", "avocado", "apple", "kiwifruit")
 fruits
