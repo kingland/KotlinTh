@@ -56,8 +56,8 @@ val b: Long? = a // implicit conversion yields a boxed Long (java.lang.Long)
 print(b == a) // Surprise! This prints "false" as Long's equals() checks whether the other is Long as well
 ```
 ข้อมูลไม่สามารถทำ implicitly converted ไปยังชนิดข้อมูลที่ใหญ่กว่า
-* implicitly converted คือกลไกที่คอมไพเลอร์ช่วยแปลงข้อมูล 
-* explicit conversions คือคอมไพเลอร์ไม่มีการช่วยแปลงข้อมูลอยากได้ต้องทำเอง
+* **`implicit conversions`** คือกลไกที่คอมไพเลอร์ช่วยเปลี่ยนข้อมูลอัตโนมัติ 
+* **`explicit conversions`** คือคอมไพเลอร์ไม่มีการช่วยเปลียนข้อมูลอัตโนมัติ (ต้องแปลงเอง)
 ```kotlin
 val b: Byte = 1 // OK, literals are checked statically
 val i: Int = b // ERROR
@@ -79,8 +79,8 @@ toFloat()   | Float
 toDouble()  | Double
 toChar()    | Char
 ### ทำ Implicit conversions เมื่อ
-* ต้องการประเมินชนิดตัวแปร กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
-* ดำเนินการทางคณิตศาสตร์ (arithmetical operations) Long + Int จะได้ค่าข้อมูลใหญ่กว่า Long เป็นค่ารีเทิร์น
+* **ต้องการะบุชนิดตัวแปร** กรณีที่ไม่ได้กำหนดชนิดข้อมูลที่ชัดเจน
+* **ดำเนินการทางคณิตศาสตร์** (arithmetical operations) Long + Int จะได้ค่าข้อมูลใหญ่กว่า Long เป็นค่ารีเทิร์น
 ```kotlin
 val l = 1L + 3 // Long + Int => Long
 ```
@@ -104,7 +104,7 @@ inv()        | bitwise inversion
 * Comparison - a < b, a > b, a <= b, a >= b
 * Range - a..b, x in a..b, x !in a..b
 ## Any, Comparable<...> 
-ข้อมูลประเภทอื่นที่ไม่ใช่ Static Floating Point ใช้ `equals` และ `compareTo`
+ข้อมูลประเภทอื่นที่ไม่ใช่ **Static Floating Point** ใช้ `equals` และ `compareTo`
 * NaN จะ `equal` ตัวเอง
 * NaN is considered greater than any other element including `POSITIVE_INFINITY`
 * -0.0 is considered less than 0.0
